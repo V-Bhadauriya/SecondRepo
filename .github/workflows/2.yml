@@ -2,7 +2,7 @@ name: Trigger Second Repo Workflow
 
 on:
   workflow_dispatch:
-
+  workflow_call:
 jobs:
   sample:
     runs-on: ubuntu-latest
