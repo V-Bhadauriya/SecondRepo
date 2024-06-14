@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  trigger:
+  sample:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Print branch name
-      run: echo "Current branch: ${{ github.ref_name }}"
+      - name: Prints the current branch name
+        run: echo "${GITHUB_BRANCH##*/}"
+        env:
+          GITHUB_BRANCH: ${{ github.ref_name }}
