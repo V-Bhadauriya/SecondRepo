@@ -3,6 +3,11 @@ name: Trigger Second Repo Workflow
 on:
   workflow_dispatch:
   workflow_call:
+    inputs: 
+      branch:
+        type: string
+        required: true
+    
     secrets:
       GH_PAT:
         required: true
@@ -12,6 +17,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.branch }}
 
       - name: Prints the current branch name
         run: echo "${GITHUB_BRANCH##*/}"
