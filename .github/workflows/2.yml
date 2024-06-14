@@ -21,4 +21,4 @@ jobs:
           ref: ${{ inputs.branch }}
 
       - name: Prints the current branch name
-        run: echo "Current branch: ${{ github.ref }}"
+        run: git branch
