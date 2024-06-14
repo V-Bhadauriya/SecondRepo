@@ -3,8 +3,9 @@ name: Trigger Second Repo Workflow
 on:
   workflow_dispatch:
   workflow_call:
-    GH_PAT:
-      required: true
+    secrets:
+      GH_PAT:
+        required: true
 jobs:
   sample:
     runs-on: ubuntu-latest
