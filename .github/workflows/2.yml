@@ -22,3 +22,20 @@ jobs:
 
       - name: Prints the current branch name
         run: git branch
+
+      - name: Create a file
+        run: echo "abc" >  test.txt
+
+      - name: lis files
+        run: ls -lrt
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: lis files
+        run: ls -lrt
+
+      - name: Prints the current branch name
+        run: git branch
